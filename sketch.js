@@ -102,7 +102,14 @@ function draw() {
     trex.changeAnimation("dead");
      gameover.visible = true;
     restart.visible = true;
-          
+               
+     
+  if(mousePressedOver(restart)) {
+    reset();
+  }
+  
+          }
+     
     
           }
   
@@ -179,3 +186,27 @@ function spawnObstacles() {
     obstaclesGroup.add(obstacle);
   }
 }
+
+
+
+
+function reset() {
+  gameState = PLAY
+
+
+  gameover.visible = false;
+  restart.visible = false;
+  
+  obstaclesGroup.destroyEach();
+  cloudsGroup.destroyEach();
+  
+  trex.changeAnimation("running");
+  
+  score = 0;
+  
+
+
+
+}
+
+
